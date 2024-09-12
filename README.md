@@ -7,4 +7,4 @@ use `go run .` to see options, almost everything is to do `go run . update` or `
 
 and of course you can build it to native executable for your system with `go build`
 
-more carefull README soon.
+more carefull README soon as basic auth too. in close TODO.
