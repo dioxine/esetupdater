@@ -22,13 +22,11 @@ func RenameUpdateVer() error {
 
 		os.Remove(filepath.Clean(config.Local.RootPath) + filepath.Clean(config.Remote.RootPath)[1:] + filepath.Clean("/dll/update.old"))
 
+		// Rename update.ver to update.old
 		if err = os.Rename(filepath.Clean(config.Local.RootPath)+filepath.Clean(config.Remote.RootPath)[1:]+filepath.Clean("/dll/update.ver"), filepath.Clean(config.Local.RootPath)+filepath.Clean(config.Remote.RootPath)[1:]+filepath.Clean("/dll/update.old")); err != nil {
 			log.Fatalln(err)
 		}
 
-	} else {
-		log.Fatalln(err)
 	}
-
 	return nil
 }
