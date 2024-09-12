@@ -1,7 +1,7 @@
 # esetupdater
 Updater for ESET AV from custom mirros
 
-edit `config.toml` accordingly comments in it
+rename `config.toml.example` into `config.toml` and edit it accordingly comments inside
 
 use `go run .` to see options, almost everything you need to start updating is to do `go run . update` 
 or `go run . update -f` to force full downloading of updates base.
