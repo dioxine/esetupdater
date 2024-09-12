@@ -27,5 +27,3 @@ go.work.sum
 # downloaded files
 web
 
-# config
-config.toml
