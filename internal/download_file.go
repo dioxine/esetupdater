@@ -29,8 +29,8 @@ func DownloadFile(filenameWithRestOfPath string) (result, error) {
 
 	if filenameWithRestOfPath == "/dll/update.ver" {
 		//Getting update.ver if true or NUP-file if false
-		fmt.Println("Downloading update.ver: " + config.Remote.Url + filepath.Clean(config.Remote.RootPath) + filenameWithRestOfPath)
-		req, err = http.NewRequest("GET", config.Remote.Url+filepath.Clean(config.Remote.RootPath)+filenameWithRestOfPath, nil)
+		fmt.Println("Downloading update.ver: " + config.Remote.Url + filepath.Clean(config.Remote.RootPath)[1:] + filenameWithRestOfPath)
+		req, err = http.NewRequest("GET", config.Remote.Url+filepath.Clean(config.Remote.RootPath)[1:]+filenameWithRestOfPath, nil)
 		if err != nil {
 			log.Fatalln(err)
 		}
@@ -60,10 +60,10 @@ func DownloadFile(filenameWithRestOfPath string) (result, error) {
 
 	if filenameWithRestOfPath == "/dll/update.ver" {
 		// for update.ver
-		if err := os.MkdirAll(filepath.Dir(filepath.Clean(config.Local.RootPath)+filepath.Clean(config.Remote.RootPath)+filenameWithRestOfPath), 0755); err != nil {
+		if err := os.MkdirAll(filepath.Dir(filepath.Clean(config.Local.RootPath)+filepath.Clean(config.Remote.RootPath)[1:]+filenameWithRestOfPath), 0755); err != nil {
 			log.Fatalln(err)
 		}
-		out, err = os.Create(filepath.Clean(config.Local.RootPath) + filepath.Clean(config.Remote.RootPath) + filenameWithRestOfPath)
+		out, err = os.Create(filepath.Clean(config.Local.RootPath) + filepath.Clean(config.Remote.RootPath)[1:] + filenameWithRestOfPath)
 		if err != nil {
 			log.Fatalln(err)
 		}
