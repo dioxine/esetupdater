@@ -12,7 +12,7 @@ password = ""
 # Custom user-agent. HWF is not real, randomized, but should work. 
 user_agent = "EEA Update (Windows; U; 64bit; BPC 11.0.2044.0; OS: 10.0.26100 SP 0.0 NT; HWF: 010036A1-5CFB-7212-B781-C437D9015CAD; PLOC ru_ru; PCODE 107.0.0; PAR -1; ATH -1; DC 0; PLID 3AC-9SP-9D9; SEAT 154b3474; RET 2107)"
 
-# Filtered or excluded architectures (can be "x64", "x86" and "arm64" values). 
+# Excluded architectures (can be "x64", "x86" and "arm64" values). 
 # If empty, all architectures are downloaded.
 # Example below:  filter = ["x86", "arm64"] <- this will downloads only "x64"
 filter = ["x86", "arm64"]
