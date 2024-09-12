@@ -2,7 +2,7 @@
 # Server address. 
 url = "http://example.com"      
 
-# A custom root path on server, for example "/" or "/eset_upd"
+# A custom root path on remote web server, for example "/" or "/eset_upd", resulting this url: "https://example.com/eset_upd"
 root_path = "/"           
 
 # User credentials (if they are used)
