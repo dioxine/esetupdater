@@ -1,10 +1,11 @@
 [remote]
-# Server address. No ability for custom TCP ports atm, in close TODO
-url = "http://example.com"      
+# Server address ending with slash. This is important!
+# No ability for custom TCP ports atm, in close TODO
+url = "http://example.com/"      
 
-# A custom root path on remote web server, for example "/eset_upd", will result in this url: "https://example.com/eset_upd"
-# If there is no additional path, leave it blank, don't use "/"
-root_path = ""           
+# A custom root path on remote web server, for example "eset_upd", will result in this url: "https://example.com/eset_upd"
+# leave it blank if remote server has no additional path, don't use "/", slashes are not allowed at beginning and the end
+root_path = "eset_upd"
 
 # User credentials (if they are used). Not working atm, in close TODO
 username = ""
