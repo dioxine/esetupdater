@@ -60,22 +60,20 @@ func DownloadFile(filenameWithRestOfPath string) (result, error) {
 
 	if filenameWithRestOfPath == "/dll/update.ver" {
 		// for update.ver
-
-		fmt.Println()
-		if err := os.MkdirAll(filepath.Dir(filepath.Clean(config.Local.RootPath)+filepath.Clean(config.Remote.RootPath)+filenameWithRestOfPath), 0755); err != nil {
+		if err := os.MkdirAll(filepath.Dir(filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filenameWithRestOfPath)), 0755); err != nil {
 			log.Fatalln(err)
 		}
 
-		out, err = os.Create(filepath.Clean(config.Local.RootPath) + filepath.Clean(config.Remote.RootPath) + filenameWithRestOfPath)
+		out, err = os.Create(filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filenameWithRestOfPath))
 		if err != nil {
 			log.Fatalln(err)
 		}
 	} else {
 		// for NUP-file
-		if err := os.MkdirAll(filepath.Dir(filepath.Clean(config.Local.RootPath)+filenameWithRestOfPath), 0755); err != nil {
+		if err := os.MkdirAll(filepath.Dir(filepath.Join(filepath.Clean(config.Local.RootPath), filenameWithRestOfPath)), 0755); err != nil {
 			log.Fatalln(err)
 		}
-		out, err = os.Create(filepath.Clean(config.Local.RootPath) + filenameWithRestOfPath)
+		out, err = os.Create(filepath.Join(filepath.Clean(config.Local.RootPath), filenameWithRestOfPath))
 		if err != nil {
 			log.Fatalln(err)
 		}

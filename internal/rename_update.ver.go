@@ -13,17 +13,17 @@ func RenameUpdateVer() error {
 		log.Fatalln(err)
 	}
 
-	if _, err := os.Stat(filepath.Clean(config.Local.RootPath) + filepath.Clean(config.Remote.RootPath) + filepath.Clean("/dll/update.ver")); err == nil {
-		file, err := os.Open(filepath.Clean(config.Local.RootPath) + filepath.Clean(config.Remote.RootPath) + filepath.Clean("/dll/update.ver"))
+	if _, err := os.Stat(filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filepath.Clean("/dll/update.ver"))); err == nil {
+		file, err := os.Open(filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filepath.Clean("/dll/update.ver")))
 		if err != nil {
 			log.Fatalln(err)
 		}
 		file.Close()
 
-		os.Remove(filepath.Clean(config.Local.RootPath) + filepath.Clean(config.Remote.RootPath) + filepath.Clean("/dll/update.old"))
+		os.Remove(filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filepath.Clean("/dll/update.old")))
 
 		// Rename update.ver to update.old
-		if err = os.Rename(filepath.Clean(config.Local.RootPath)+filepath.Clean(config.Remote.RootPath)+filepath.Clean("/dll/update.ver"), filepath.Clean(config.Local.RootPath)+filepath.Clean(config.Remote.RootPath)+filepath.Clean("/dll/update.old")); err != nil {
+		if err = os.Rename(filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filepath.Clean("/dll/update.ver")), filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filepath.Clean("/dll/update.old"))); err != nil {
 			log.Fatalln(err)
 		}
 

@@ -13,7 +13,7 @@ func CheckNupExist(filename string) bool {
 		log.Fatalln(err)
 	}
 
-	if _, err := os.Stat(filepath.Clean(config.Local.RootPath) + filename); err == nil {
+	if _, err := os.Stat(filepath.Join(filepath.Clean(config.Local.RootPath), filename)); err == nil {
 		return true
 	}
 
