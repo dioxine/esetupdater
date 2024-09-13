@@ -3,7 +3,8 @@
 url = "http://example.com"      
 
 # A custom root path on remote web server, for example "/eset_upd", will result in this url: "https://example.com/eset_upd"
-root_path = "/"           
+# If there is no additional path, leave it blank, don't use "/"
+root_path = ""           
 
 # User credentials (if they are used). Not working atm, in close TODO
 username = ""
