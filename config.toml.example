@@ -5,7 +5,8 @@ url = "http://example.com/"
 
 # A custom root path on remote web server, for example "eset_upd", will result in this url: "https://example.com/eset_upd"
 # leave it empty "" if remote server has no additional path, don't use "/", slashes also are not allowed at beginning and the end
-root_path = "eset_upd"
+# of root_path string
+root_path = ""
 
 # User credentials (if they are used). Not working atm, in close TODO
 username = ""
@@ -23,6 +24,9 @@ filter = ["x86", "arm64"]
 # Directory for downloaded files on your machine. Can be relative or absolute.
 root_path = "./web/public_html"
 
-# Custom additional directory contaiting "dll/update.ver". Added to local root_path. 
+# Custom additional directory contaiting "dll/update.ver". Added to [local] root_path. 
 # In this example it will be "./web/public_html/eset_upd"
+# if [remote] root_path equals [local] custom_dll_path, then it will create 100% identical 
+# mirror but on your host, regarding filters.
+
 custom_dll_path = "eset_upd"
