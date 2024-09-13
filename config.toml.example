@@ -22,3 +22,7 @@ filter = ["x86", "arm64"]
 [local]
 # Directory for downloaded files on your machine. Can be relative or absolute.
 root_path = "./web/public_html"
+
+# Custom additional directory contaiting "dll/update.ver". Added to local root_path. 
+# In this example it will be "./web/public_html/eset_upd"
+custom_dll_path = "eset_upd"
