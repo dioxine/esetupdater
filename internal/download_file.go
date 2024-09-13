@@ -60,11 +60,11 @@ func DownloadFile(filenameWithRestOfPath string) (result, error) {
 
 	if filenameWithRestOfPath == "/dll/update.ver" {
 		// for update.ver
-		if err := os.MkdirAll(filepath.Dir(PathOs(config.Local.RootPath, config.Remote.RootPath, filenameWithRestOfPath)), 0755); err != nil {
+		if err := os.MkdirAll(filepath.Dir(PathOs(config.Local.RootPath, config.Local.CustomDllPath, filenameWithRestOfPath)), 0755); err != nil {
 			log.Fatalln(err)
 		}
 
-		out, err = os.Create(PathOs(config.Local.RootPath, config.Remote.RootPath, filenameWithRestOfPath))
+		out, err = os.Create(PathOs(config.Local.RootPath, config.Local.CustomDllPath, filenameWithRestOfPath))
 		if err != nil {
 			log.Fatalln(err)
 		}

@@ -14,7 +14,8 @@ type Config struct {
 		Filter    []string `toml:"filter"`
 	}
 	Local struct {
-		RootPath string `toml:"root_path"`
+		RootPath      string `toml:"root_path"`
+		CustomDllPath string `toml:"custom_dll_path"`
 	}
 }
 

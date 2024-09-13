@@ -41,7 +41,7 @@ func OpenUpdateVer(filenameWithRestOfPath string) (*os.File, error) {
 		log.Fatalln(err)
 	}
 
-	file, err := os.Open(PathOs(config.Local.RootPath, config.Remote.RootPath, filenameWithRestOfPath))
+	file, err := os.Open(PathOs(config.Local.RootPath, config.Local.CustomDllPath, filenameWithRestOfPath))
 	if err != nil {
 		log.Fatalln(err)
 	}

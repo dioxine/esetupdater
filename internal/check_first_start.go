@@ -13,13 +13,13 @@ func CheckIfFirstStart() bool {
 		log.Fatalln(err)
 	}
 
-	file, err := os.Open(PathOs(config.Local.RootPath, config.Remote.RootPath, "/dll/update.old"))
+	file, err := os.Open(PathOs(config.Local.RootPath, config.Local.CustomDllPath, "/dll/update.old"))
 
 	if err != nil {
-		if err := os.MkdirAll(PathOs(config.Local.RootPath, config.Remote.RootPath, "/dll"), 0755); err != nil {
+		if err := os.MkdirAll(PathOs(config.Local.RootPath, config.Local.CustomDllPath, "/dll"), 0755); err != nil {
 			log.Fatal(err)
 		}
-		file, err := os.Create(PathOs(config.Local.RootPath, config.Remote.RootPath, "/dll/update.old"))
+		file, err := os.Create(PathOs(config.Local.RootPath, config.Local.CustomDllPath, "/dll/update.old"))
 		if err != nil {
 			fmt.Println(err)
 			// log.Fatalln(err)
