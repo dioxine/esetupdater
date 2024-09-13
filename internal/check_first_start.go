@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"path/filepath"
 )
 
 func CheckIfFirstStart() bool {
@@ -14,13 +13,13 @@ func CheckIfFirstStart() bool {
 		log.Fatalln(err)
 	}
 
-	file, err := os.Open(filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filepath.Clean("/dll/update.old")))
+	file, err := os.Open(PathOs(config.Local.RootPath, config.Remote.RootPath, "/dll/update.old"))
 
 	if err != nil {
-		if err := os.MkdirAll(filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filepath.Clean("/dll")), 0755); err != nil {
+		if err := os.MkdirAll(PathOs(config.Local.RootPath, config.Remote.RootPath, "/dll"), 0755); err != nil {
 			log.Fatal(err)
 		}
-		file, err := os.Create(filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filepath.Clean("/dll/update.old")))
+		file, err := os.Create(PathOs(config.Local.RootPath, config.Remote.RootPath, "/dll/update.old"))
 		if err != nil {
 			fmt.Println(err)
 			// log.Fatalln(err)

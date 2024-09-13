@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"path/filepath"
 )
 
 func CompareUpdateVer() ([]SectionBlock, []SectionBlock, error) {
@@ -42,7 +41,7 @@ func OpenUpdateVer(filenameWithRestOfPath string) (*os.File, error) {
 		log.Fatalln(err)
 	}
 
-	file, err := os.Open(filepath.Join(filepath.Clean(config.Local.RootPath), filepath.Clean(config.Remote.RootPath), filepath.Clean(filenameWithRestOfPath)))
+	file, err := os.Open(PathOs(config.Local.RootPath, config.Remote.RootPath, filenameWithRestOfPath))
 	if err != nil {
 		log.Fatalln(err)
 	}

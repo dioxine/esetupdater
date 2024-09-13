@@ -3,7 +3,6 @@ package internal
 import (
 	"log"
 	"os"
-	"path/filepath"
 )
 
 func CheckNupExist(filename string) bool {
@@ -13,7 +12,7 @@ func CheckNupExist(filename string) bool {
 		log.Fatalln(err)
 	}
 
-	if _, err := os.Stat(filepath.Join(filepath.Clean(config.Local.RootPath), filename)); err == nil {
+	if _, err := os.Stat(PathOs(config.Local.RootPath, filename)); err == nil {
 		return true
 	}
 
