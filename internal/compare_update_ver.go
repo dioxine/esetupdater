@@ -42,7 +42,7 @@ func OpenUpdateVer(filenameWithRestOfPath string) (*os.File, error) {
 		log.Fatalln(err)
 	}
 
-	file, err := os.Open(filepath.Clean(config.Local.RootPath) + filepath.Clean(config.Remote.RootPath)[1:] + filepath.Clean(filenameWithRestOfPath))
+	file, err := os.Open(filepath.Clean(config.Local.RootPath) + filepath.Clean(config.Remote.RootPath) + filepath.Clean(filenameWithRestOfPath))
 	if err != nil {
 		log.Fatalln(err)
 	}
