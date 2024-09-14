@@ -18,7 +18,7 @@ user_agent = "EEA Update (Windows; U; 64bit; BPC 11.0.2044.0; OS: 10.0.26100 SP 
 
 # Excluded architectures (can be "x64", "x86" and "arm64" values). 
 # If empty [], all architectures will be downloaded.
-# Example below:  filter = ["x86", "arm64"] <- this will downloads only "x64"
+# Example below:  filter = ["x86", "arm64"] <- this will download only "x64"
 filter = ["x86", "arm64"]
 
 [local]
