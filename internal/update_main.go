@@ -12,7 +12,7 @@ func UpdateMain(sectionBlockArrayOld []SectionBlock, sectionBlockArrayNew []Sect
 			fmt.Println("Section: " + sectionBlock["sectionName"] + " full downloading")
 			DownloadFile(sectionBlock["file"])
 			// Check if does not exist
-		} else if !CheckNupExist(sectionBlock["file"]) {
+		} else if !CheckNupExists(sectionBlock["file"]) {
 			fmt.Println("Section: " + sectionBlock["sectionName"] + " continue downloading")
 			DownloadFile(sectionBlock["file"])
 			// Version differs check

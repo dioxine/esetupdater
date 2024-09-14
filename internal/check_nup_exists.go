@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func CheckNupExist(filename string) bool {
+func CheckNupExists(filename string) bool {
 
 	config, err := ReadConfig()
 	if err != nil {
