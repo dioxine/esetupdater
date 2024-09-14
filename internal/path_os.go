@@ -5,8 +5,8 @@ import (
 )
 
 func PathOs(paths ...string) string {
-	for el := range paths {
-		paths[el] = filepath.Clean(paths[el])
+	for path := range paths {
+		paths[path] = filepath.Clean(paths[path])
 	}
 	return filepath.Join(paths...)
 }
