@@ -35,6 +35,9 @@ func DownloadFile(filenameWithRestOfPath string) (result, error) {
 			log.Fatalln(err)
 		}
 		req.Header.Add("User-Agent", config.Remote.UserAgent)
+		if config.Remote.Username != "" && config.Remote.Password != "" {
+			req.SetBasicAuth(config.Remote.Username, config.Remote.Password)
+		}
 	} else {
 		fmt.Println("Downloading NUP-file: " + config.Remote.Url + filenameWithRestOfPath)
 		req, err = http.NewRequest("GET", config.Remote.Url+filenameWithRestOfPath, nil)
@@ -42,6 +45,9 @@ func DownloadFile(filenameWithRestOfPath string) (result, error) {
 			log.Fatalln(err)
 		}
 		req.Header.Add("User-Agent", config.Remote.UserAgent)
+		if config.Remote.Username != "" && config.Remote.Password != "" {
+			req.SetBasicAuth(config.Remote.Username, config.Remote.Password)
+		}
 	}
 
 	response, err := client.Do(req)
